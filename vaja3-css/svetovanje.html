@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danijelova spletna stran - Svetovanje</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Danijelova spletna stran</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Domov</a></li>
+          <li><a href="izdelki.html">Izdelki</a></li>
+          <li><a href="svetovanje.html">Svetovanje</a></li>
+          <li><a href="https://estudij.um.si">Vaje</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h2>Svetovanje</h2>
+    <h3>Kontaktni podatki</h3>
+    <form action="svetovanje.html" method="get">
+      <datalist id="SlovenskaMesta">
+        <option value="Ljubljana"></option>
+        <option value="Maribor"></option>
+        <option value="Celje"></option>
+        <option value="Kranj"></option>
+        <option value="Ptuj"></option>
+        <option value="Velenje"></option>
+        <option value="Trbovlje"></option>
+      </datalist>
+
+      <label for="imeInPriimek">Ime in priimek</label>
+      <input type="text" name="imeInPriimek" />
+      <br />
+      <label for="kraj">Kraj</label>
+      <input type="text" list="SlovenskaMesta" autocomplete="on" name="kraj" />
+      <br />
+      <label for="email">E-pošta</label>
+      <input type="email" name="email" id="email" />
+      <br />
+      <label for="racunalnik">Vrsta računalnika:</label>
+      <input type="radio" name="racunalnik" id="Namizni" value="Namizni" />
+      <label for="Namizni">Namizni</label>
+      <input type="radio" name="racunalnik" id="Prenosni" value="Prenosni" />
+      <label for="Prenosni">Prenosni</label>
+      <input type="radio" name="racunalnik" id="AllInOne" value="All in one" />
+      <label for="AllInOne">All in one</label>
+      <br />
+      Namen uporabe:
+      <input type="checkbox" id="namen1" name="namen1" value="Igranje iger" />
+      <label for="namen1"> Igranje iger</label>
+      <input type="checkbox" id="vehicle2" name="namen2" value="Modeliranje" />
+      <label for="namen2"> Modeliranje</label>
+      <input type="checkbox" id="namen3" name="namen3" value="Video obdelava" />
+      <label for="namen3"> Video obdelava</label>
+      <input type="checkbox" id="namen4" name="namen4" value="Strojno učenje" />
+      <label for="namen4"> Strojno učenje</label>
+      <br />
+      <label for="Komentar">Komentar:</label>
+      <br />
+      <textarea name="Komentar" id="komentar" cols="60" rows="10"></textarea>
+      <br />
+      <button type="submit">Pošlji</button>
+    </form>
+  </body>
+</html>
