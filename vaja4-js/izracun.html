@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .pozitivno {
+        color: green;
+        font-weight: bold;
+      }
+
+      .negativno {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      narisi = () => {
+        var a = window.prompt("Vnesite a: ");
+        var b = window.prompt("Vnesite b: ");
+
+        if (isNaN(a) || isNaN(b)) {
+          alert("A ali B ni št");
+          return;
+        }
+
+        a = parseInt(a);
+        b = parseInt(b);
+
+        var sestevek = a + b;
+        var razlika = a - b;
+        var mnozenje = a * b;
+
+        if (b != 0) {
+          var ostanek = a % b;
+          var deljenje = a / b;
+        } else {
+          var ostanek = "Ni izvedljivo";
+          var deljenje = "Ni izvedljivo";
+        }
+
+        var vecji =
+          a > b
+            ? "A je večji od B"
+            : a < b
+            ? "A je manjši od B"
+            : "A je enak B";
+
+        document.write(
+          "<p>A: <span class='" +
+            (a >= 0 ? "pozitivno" : "negativno") +
+            "'>" +
+            a +
+            "</span></p>"
+        );
+        document.write(
+          "<p>B: <span class='" +
+            (b >= 0 ? "pozitivno" : "negativno") +
+            "'>" +
+            b +
+            "</span></p>"
+        );
+        document.write("<p>Seštevek: " + sestevek + "</p>");
+        document.write("<p>Razlika: " + razlika + "</p>");
+        document.write("<p>Zmnožek: " + mnozenje + "</p>");
+        document.write("<p>Deljenje: " + deljenje + "</p>");
+        document.write("<p>Ostanek: " + ostanek + "</p>");
+        document.write("<p>Primerjava: " + vecji + "</p>");
+      };
+
+      narisi();
+    </script>
+  </body>
+</html>
