@@ -1,175 +1,175 @@
-:root{
-    --purple: #3500d3;
-    --hover-purple: #240090;
-    --bg: #282828;
-    --bg-card: #aaaaaaa;  
+:root {
+  --purple: #3500d3;
+  --hover-purple: #240090;
+  --bg: #282828;
+  --bg-card: #aaaaaaa;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-
-html, body{
-    margin: 0px;
-    background-color: var(--bg);
-    color: white;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+html,
+body {
+  margin: 0px;
+  background-color: var(--bg);
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-header>h1{
-    margin: 0px;
-    padding: 10px;
-    text-align: Center;
+header > h1 {
+  margin: 0px;
+  padding: 10px;
+  text-align: Center;
 }
 
-header>nav{
-    background-color: var(--purple);
-    
+header > nav {
+  background-color: var(--purple);
 }
 
-nav>ul{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    padding-left:0;
+nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
 }
 
-nav>ul>li>a{
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
+nav > ul > li > a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
 }
 
-nav>ul>li>a:hover{
-    background-color: var(--hover-purple);
+nav > ul > li > a:hover {
+  background-color: var(--hover-purple);
 }
 
-div.vsebina{
-    width: 100%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+div.vsebina {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.kartica{
-    margin: 1%;
-    background-color: gray;
+.kartica {
+  margin: 1%;
+  background-color: gray;
 }
 
-.kartica>h2{
-    background-color: var(--purple);
-    padding: 10px;
-    text-align: center;
-    margin-bottom: 0px;
+.kartica > h2 {
+  background-color: var(--purple);
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 0px;
 }
 
-.kartica>p{
-    margin: 10px;
+.kartica > p {
+  margin: 10px;
 }
 
-.kartica>*>img, video{
-    width: 100%; 
-    height: auto;
-    margin-left: auto;
+.kartica > * > img,
+video {
+  width: 100%;
+  height: auto;
+  margin-left: auto;
 }
 
-.kartica>figure{
-    padding: 0px;
-    margin: 0px;
+.kartica > figure {
+  padding: 0px;
+  margin: 0px;
 }
 
-.kartica>figure>figcaption{
-    text-align: center;
+.kartica > figure > figcaption {
+  text-align: center;
 }
 
-.izdelek>h3{
-    padding: 10px;
-    margin: 0px;
-    background-color: var(--purple);
-    text-align: center;
+.izdelek > h3 {
+  padding: 10px;
+  margin: 0px;
+  background-color: var(--purple);
+  text-align: center;
 }
 
-.izdelek>a>img{
-    width: 100%;
-    height: auto;
-    margin: 0px;
-    padding: 0px;
-    aspect-ratio: 1/1;
+.izdelek > a > img {
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  padding: 0px;
+  aspect-ratio: 1/1;
 }
 
-.izdelek>dl>*{
-    margin: 0px;
+.izdelek > dl > * {
+  margin: 0px;
 }
 
-.izdelek>dl>dd{
-    margin-left: 0.5rem;
+.izdelek > dl > dd {
+  margin-left: 0.5rem;
 }
 
-a{
-    color: white;
+a {
+  color: white;
 }
 
-.izdelek{
-    width: 31%;
-    height: 400px;
+.izdelek {
+  width: 31%;
+  height: 400px;
 }
 
-header{
-    background-color: var(--bg); 
-    position: sticky;
-    top: 0px;
+header {
+  background-color: var(--bg);
+  position: sticky;
+  top: 0px;
 }
 
-label{
-    display: inline-block;
-    width: 180px;
+label {
+  display: inline-block;
+  width: 180px;
 }
 
-input[type="text"], input[type="email"]{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0px;
-    display: inline-block;
-    border-radius: 2px;
-    border-color: var(--purple);
-    border-style: solid;
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0px;
+  display: inline-block;
+  border-radius: 2px;
+  border-color: var(--purple);
+  border-style: solid;
 }
 
-textarea{
-    width: 100%;
-    height: 150px;
-    resize: none;
-    padding: 12px 20px;
-    border-radius: 2px;
-    border-color: var(--purple);
-    border-style: solid;
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  padding: 12px 20px;
+  border-radius: 2px;
+  border-color: var(--purple);
+  border-style: solid;
 }
 
-textarea:focus{
-    border-color: var(--hover-purple);
+textarea:focus {
+  border-color: var(--hover-purple);
 }
 
-form{
-    padding: 1rem;
+form {
+  padding: 1rem;
 }
 
-button[type="submit"]{
-    width: 100%;
-    padding: 1rem;
-    margin-top: 10px;
-    border: none;
-    border-radius: 2px;
-    font-weight: bold;
-    background-color: var(--purple);
-    color: white; 
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 10px;
+  border: none;
+  border-radius: 2px;
+  font-weight: bold;
+  background-color: var(--purple);
+  color: white;
 }
-button[type="submit"]:hover{
-    background-color: var(--hover-purple);
-    cursor: grab;
+button[type="submit"]:hover {
+  background-color: var(--hover-purple);
+  cursor: grab;
 }
 
 /* Customize the label (the container) */
@@ -240,8 +240,8 @@ button[type="submit"]:hover{
   transform: rotate(45deg);
 }
 
-.checkbox-label{
-    margin-right: 1rem;
+.checkbox-label {
+  margin-right: 1rem;
 }
 
 /* The container-radio */
@@ -300,33 +300,34 @@ button[type="submit"]:hover{
 
 /* Style the indicator (dot/circle) */
 .container-radio .radio:after {
- 	top: 9px;
-	left: 9px;
-	width: 8px;
-	height: 8px;
-	border-radius: 50%;
-	background: white;
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
 }
 
 @media screen and (max-width: 600px) {
-    
-    .kartica{
-        margin: 0px;
-        width: 100%;
-    }
+  .kartica {
+    margin: 0px;
+    width: 100%;
+  }
 
-    nav>ul>li{
-        width: 100%;
-    }
+  nav > ul > li {
+    width: 100%;
+  }
 
-    nav>ul{
-        flex-direction: column;
-        margin-top: 0px;
-    }
+  nav > ul {
+    flex-direction: column;
+    margin-top: 0px;
+  }
 }
 
-@media screen and (min-width: 601px) and (max-width: 900px){
-    .izdelek{
-        width: 48%;
-    }
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  //Tukaj sem dal 900px ker na 1000px se ni dobro skaliralo
+  //Nekje pri resizanju izdelkov nisem nastavil skaliranje, ker je brez njega boljše zgledalo. Zaradi tega mi je pokvarilo nekatere slike.
+  .izdelek {
+    width: 48%;
+  }
 }
