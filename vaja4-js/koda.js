@@ -31,9 +31,9 @@ function narisiElemente(steviloElementov, r, g, b) {
   for (var i = 0; i < steviloElementov; i++) {
     document.write(
       ustvariElement(
-        izracunaj(r, steviloElementov, i),
-        izracunaj(g, steviloElementov, i),
-        izracunaj(b, steviloElementov, i)
+        izracunaj(r, steviloElementov - 1, i),
+        izracunaj(g, steviloElementov - 1, i),
+        izracunaj(b, steviloElementov - 1, i)
       )
     );
   }
