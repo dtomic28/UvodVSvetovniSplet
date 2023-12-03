@@ -4,18 +4,195 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .napaka {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <form action="">
+    <form id="form">
       <label for="uporabniskoIme">Uporabniško ime:</label>
-      <input type="text" id="uporabniskoIme" name="uporabniskoIme" required />
+      <input
+        type="text"
+        id="uporabniskoIme"
+        name="uporabniekoIme"
+        onchange="preveriUporabniskoIme()"
+        required
+      />
       <span id="uporabniskoImeNapaka" class="napaka"></span>
       <br />
 
       <label for="email">E pošta:</label>
-      <input type="text" id="email" name="email" required />
+      <input
+        type="text"
+        id="email"
+        name="email"
+        required
+        onchange="preveriEmail()"
+      />
       <span id="emailNapaka" class="napaka"></span>
       <br />
+
+      <label for="password">Geslo: </label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        onchange="preveriGeslo()"
+      />
+      <span id="pwNapaka" class="napaka"></span>
+      <br />
+
+      <label for="confirmPassword">Ponovi geslo: </label>
+      <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        onchange="preveriConfirmPassword()"
+      />
+      <span id="pwConfirmNapaka" class="napaka"></span>
+      <br />
+
+      <label>Spol: </label>
+      <input type="radio" name="gender" id="male" value="male" />Moški
+      <input type="radio" name="gender" id="female" value="female" />Ženska
+      <span id="spolNapaka" class="napaka"></span>
+      <br />
+
+      <button type="submit">Pošlji</button>
     </form>
   </body>
+
+  <script>
+    var uporabniskaImena = ["danijel", "tilen", "dominik", "aljaž", "tomo"];
+    var imenaSpanov = [
+      "uporabniskoImeNapaka",
+      "emailNapaka",
+      "pwNapaka",
+      "pwConfirmNapaka",
+      "spolNapaka",
+    ];
+
+    password = document.getElementById("password");
+    confirmPassword = document.getElementById("confirmPassword");
+    username = document.getElementById("uporabniskoIme");
+    email = document.getElementById("email");
+    password = document.getElementById("password");
+
+    clear = () => {
+      imenaSpanov.forEach((element) => {
+        document.getElementById(element).innerText = "";
+      });
+    };
+
+    preveri = () => {
+      clear();
+      console.log("dela");
+      if (!preveriUporabniskoIme()) {
+        console.log("preveriUporabniskoIme");
+        return false;
+      }
+
+      if (!preveriEmail()) {
+        console.log(2);
+        return false;
+      }
+
+      if (!preveriGeslo()) {
+        console.log(3);
+        return false;
+      }
+
+      if (!preveriConfirmPassword()) {
+        console.log(4);
+        return false;
+      }
+
+      var gender = document.querySelector('input[name="gender"]:checked');
+      if (!gender) {
+        document.getElementById("spolNapaka").innerText = "Izberite spol";
+        return false;
+      }
+
+      console.log("works");
+      return true;
+    };
+
+    document
+      .getElementById("form")
+      .addEventListener("submit", function (event) {
+        if (!preveri()) {
+          event.preventDefault();
+        }
+      });
+
+    preveriConfirmPassword = () => {
+      clear();
+      if (confirmPassword.value != password.value) {
+        document.getElementById("pwConfirmNapaka").innerText =
+          "Gesli niso isti.";
+        return false;
+      }
+      return true;
+    };
+
+    preveriUporabniskoIme = () => {
+      clear();
+      if (username.value.length < 3 || username.value.length > 20) {
+        document.getElementById("uporabniskoImeNapaka").innerText =
+          "Uporabniško ime je predolgo ali pre kratko";
+        return false;
+      }
+
+      if (uporabniskaImena.includes(username.value)) {
+        document.getElementById("uporabniskoImeNapaka").innerText =
+          "Uporabniško ime ze obstaja";
+        return false;
+      }
+
+      return true;
+    };
+
+    preveriEmail = () => {
+      clear();
+      //Regex: https://www.abstractapi.com/tools/email-regex-guide
+      var regex =
+        /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (regex.test(email.value)) {
+        return true;
+      } else {
+        document.getElementById("emailNapaka").innerText = "Ni veljaven email";
+        return false;
+      }
+    };
+
+    preveriGeslo = () => {
+      clear();
+      if (password.value.length < 6) {
+        document.getElementById("pwNapaka").innerText = "Geslo je prekratko";
+        return false;
+      }
+      var lowercase = /[a-z]/;
+      var uppercase = /[A-Z]/;
+      var cifre = /\d/;
+
+      if (!lowercase.test(password.value)) {
+        document.getElementById("pwNapaka").innerText = "Premalo malih črk";
+        return false;
+      }
+
+      if (!uppercase.test(password.value)) {
+        document.getElementById("pwNapaka").innerText = "Premalo velikih črk";
+        return false;
+      }
+
+      if (!cifre.test(password.value)) {
+        document.getElementById("pwNapaka").innerText = "Premalo številk";
+        return false;
+      }
+
+      return true;
+    };
+  </script>
 </html>
